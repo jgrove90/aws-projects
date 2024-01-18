@@ -6,11 +6,6 @@ resource "aws_cloudfront_origin_access_control" "s3_oac" {
   signing_protocol                  = "sigv4"
 }
 
-resource "aws_s3_bucket_policy" "bucket_policy" {
-  bucket = aws_s3_bucket.web_bucket.id
-  policy = data.aws_iam_policy_document.s3_cloudfront_policy.json
-}
-
 resource "aws_cloudfront_distribution" "s3_distribution" {
   aliases = ["*.${var.domain_name}", "static.${var.domain_name}"]
 

@@ -26,4 +26,9 @@ resource "aws_s3_object" "website_content" {
   "binary/octet-stream")
 
   depends_on = [aws_s3_bucket.web_bucket]
-}   
+}  
+
+resource "aws_s3_bucket_policy" "bucket_policy" {
+  bucket = aws_s3_bucket.web_bucket.id
+  policy = data.aws_iam_policy_document.s3_cloudfront_policy.json
+}
