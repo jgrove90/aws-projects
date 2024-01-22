@@ -3,4 +3,4 @@ This project automates the deployment of a static website on AWS using Terraform
 
 ## Architecture Diagram
 
-![Diagram](./img/aws-static-website-diagram.png)
+![Diagram](./images/aws-static-website-diagram.png)
