@@ -1,7 +1,7 @@
 variable "aws_region" {
   description = "AWS region for the infrastructure"
   type        = string
-  default     = "us-east-2"
+  default     = "us-west-2"
 }
 
 variable "s3_web_bucket_name" {
@@ -13,7 +13,7 @@ variable "s3_web_bucket_name" {
 variable "project_name" {
   description = "Project name"
   type        = string
-  default     = "static-website"
+  default     = "static-meme"
 }
 
 variable "domain_name" {
@@ -21,7 +21,6 @@ variable "domain_name" {
   type        = string
   default     = "jhome.dev"
 }
-
 
 variable "cloudflare_api_token" {
   description = "Cloudflare api token"
@@ -38,5 +37,18 @@ variable "cloudflare_zone_id" {
 variable "cloudflare_domain_name" {
   description = "Cloudflare domain name"
   type        = string
-  default     = "static"
+  default     = "meme"
 }
+
+variable codebuild_source_location {
+  description = "Codebuild source"
+  type        = string
+  default     = "static-meme"
+}
+
+variable github_owner {
+  description = "Github owner"
+  type        = string
+  default     = "jgrove90"
+}
+
