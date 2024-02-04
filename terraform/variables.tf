@@ -19,7 +19,7 @@ variable "project_name" {
 variable "domain_name" {
   description = "Domain name"
   type        = string
-  default     = "jhome.dev"
+  default     = "homelab.dev"
 }
 
 variable "cloudflare_api_token" {
