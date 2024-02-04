@@ -48,25 +48,4 @@ resource "aws_codepipeline" "website" {
       }
     }
   }
-
-  stage {
-    name = "Deploy"
-
-    action {
-      name            = "Deploy"
-      category        = "Deploy"
-      owner           = "AWS"
-      provider        = "S3"
-      input_artifacts = ["build_output"]
-      version         = "1"
-
-      configuration = {
-        BucketName = var.s3_web_bucket_name
-        Extract    = "true"
-      }
-    }
-  }
-
-  depends_on = [aws_s3_bucket.web_bucket, aws_s3_bucket.codepipeline]
-
 }

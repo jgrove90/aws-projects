@@ -14,6 +14,11 @@ resource "aws_codebuild_project" "website" {
     type                        = "LINUX_CONTAINER"
     privileged_mode             = true
     image_pull_credentials_type = "CODEBUILD"
+
+    environment_variable {
+    name  = "S3_BUCKET"
+    value = aws_s3_bucket.web_bucket.bucket
+    }
   }
 
   source {
