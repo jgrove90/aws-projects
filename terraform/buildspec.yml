@@ -12,6 +12,6 @@ phases:
       - echo Uploading changed files to S3...
       - |
         ls -R $CODEBUILD_SRC_DIR
-        for file in $CODEBUILD_SRC_DIR/static-website/website/*; do
-          aws s3 cp $file s3://$S3_BUCKET/website/${file#$CODEBUILD_SRC_DIR/static-website/website/}
+        for file in $CODEBUILD_SRC_DIR/website/*; do
+          aws s3 cp $file s3://$S3_BUCKET/website/${file#$CODEBUILD_SRC_DIR/website/}
         done
