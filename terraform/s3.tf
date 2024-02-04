@@ -1,5 +1,5 @@
 resource "random_string" "random" {
-  length  = 4
+  length  = 6
   special = false
   upper   = false
   lower   = true
@@ -26,4 +26,13 @@ resource "aws_s3_object" "website_content" {
   "binary/octet-stream")
 
   depends_on = [aws_s3_bucket.web_bucket]
-}   
+}  
+
+resource "aws_s3_bucket" "codepipeline" {
+  bucket = "codepipeline-artifacts-${random_string.random.result}"
+  force_destroy = true
+  tags = {
+    Name        = "CodePipeline artifacts bucket"
+    Environment = "Dev"
+  }
+}

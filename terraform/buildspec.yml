@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - echo Installing dependencies...
+      - pip install awscli
+  post_build:
+    commands:
+      - echo Uploading changed files to S3...
+      - |
+        ls -R $CODEBUILD_SRC_DIR
+        for file in $CODEBUILD_SRC_DIR/static-website/website/*; do
+          aws s3 cp $file s3://$S3_BUCKET/website/${file#$CODEBUILD_SRC_DIR/static-website/website/}
+        done
