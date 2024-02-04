@@ -53,11 +53,13 @@ data "aws_iam_policy_document" "s3_codepipeline_policy" {
     actions = [
       "s3:PutObject",
       "s3:GetObject",
-      "s3:ListBucket"
+      "s3:ListBucket",
+      "s3:GetBucketLocation"
     ]
 
     resources = [
-      "${aws_s3_bucket.codepipeline.arn}/*"]
+      "${aws_s3_bucket.codepipeline.arn}/*",
+      "${aws_s3_bucket.web_bucket.arn}/*"]
   }
 }
 
