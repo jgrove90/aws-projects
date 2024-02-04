@@ -15,7 +15,7 @@
 <h2 id="about">About</h2>
 <p>This project automates the deployment of a static website on AWS using Terraform. It sets up the necessary infrastructure components such as an S3 bucket for storing website content, CloudFront for content delivery, configuring Cloudflare as a DNS service, and CodePipeline for continuous integration and continuous deployment (CI/CD) from this GitHub repository.</P>
 
-<p>Though I am only displaying a meme, this repository is a great starting point to launch a static website in AWS. Whether it be for a portfolio, resume, or a landing page website. I am using CloudFlare as my DNS provider since I use them for my homelab. Route 53 would an alternative if you're looking to use an AWS resource. 
+<p>Though I am displaying a meme, this repository is a great starting point to launch a static website in AWS. Whether it be for a portfolio, resume, or a landing page website. I am using CloudFlare as my DNS provider since I use them for my homelab. Route 53 would an alternative if you're looking to use an AWS resource. 
 
 <h3 id="aws_diagram">AWS Diagram</h2>
 <p align="center">
